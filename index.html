@@ -1,1 +1,48 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Hymnal</h2>
+  <div class="btn-group" id="hymnal" data-toggle="buttons">
+       <label class="btn btn-default">
+         <input type="radio" name='hymnal' class="toggle" value="h"> English
+       </label>
+       <label class="btn btn-default">
+         <input type="radio" name='hymnal' class="toggle" value="ch"> 大本
+       </label>
+       <label class="btn btn-default">
+         <input type="radio" name='hymnal' class="toggle" value="ts"> 補充本（一、二）
+       </label>
+  </div>
+</div>
+
+<!-- <input type="button" class="btn btn-info" value="Input Button" onclick=" relocate_home()"> -->
+
+<div class="container">
+  <h2>Hymn Number</h1>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="hymn number" name="number">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="button" onclick=" relocate_home()"><i class="glyphicon glyphicon-search"></i></button>
+      </div>
+    </div>
+</div>
+
+<script>
+function relocate_home()
+{
+     location.href = "https://www.hymnal.net/en/hymn/"+$('input[name=hymnal]:checked').val()+"/"+$('input[name=number]').val();
+} 
+</script>
+
+</body>
+</html>
